@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         className="background-video"
         controls
       >
-        <source src="/liberacion.mp4" type="video/mp4" />
+        <source src="liberacion.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
