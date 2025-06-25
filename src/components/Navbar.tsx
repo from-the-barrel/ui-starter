@@ -13,16 +13,29 @@ const activeColor = "#ff4c4c";
 const hoverColor = "#ff6666";
 const navbarBg = "#000";
 
+interface UnderlineStyle {
+  left: number;
+  width: number;
+}
+
 const Navbar = () => {
   const location = useLocation();
-  const [underlineStyle, setUnderlineStyle] = useState({});
-  const navRef = useRef(null);
+  // Initialize with zero values to avoid undefined usage
+  const [underlineStyle, setUnderlineStyle] = useState<UnderlineStyle>({
+    left: 0,
+    width: 0,
+  });
+
+  // Specify the ref type as HTMLElement or null
+  const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (!navRef.current) return;
+
     const activeLink = navRef.current.querySelector(
       `a[href="${location.pathname}"]`
-    );
+    ) as HTMLElement | null;
+
     if (activeLink) {
       const { offsetLeft, offsetWidth } = activeLink;
       setUnderlineStyle({
@@ -30,7 +43,10 @@ const Navbar = () => {
         width: offsetWidth,
       });
     } else {
-      setUnderlineStyle({ width: 0 });
+      setUnderlineStyle({
+        left: 0,
+        width: 0,
+      });
     }
   }, [location.pathname]);
 
@@ -62,7 +78,7 @@ const Navbar = () => {
           flexGrow: 1,
         }}
       >
-        {/*logo as home link*/}
+        {/* Uncomment if you want the logo as home link */}
         {/* <Link
           to="/"
           style={{ height: "70%", display: "flex", alignItems: "center" }}
@@ -145,12 +161,11 @@ const Navbar = () => {
                     </Link>
                   </li>
 
-                  {/* Add slash unless it's the last item */}
                   {index < links.length - 1 && (
                     <li
                       aria-hidden
                       style={{
-                        margin: "0 16px", // equal left and right spacing
+                        margin: "0 16px",
                         color: activeColor,
                         fontSize: "18px",
                         userSelect: "none",
@@ -169,8 +184,8 @@ const Navbar = () => {
             style={{
               position: "absolute",
               bottom: 0,
-              left: underlineStyle.left || 0,
-              width: underlineStyle.width || 0,
+              left: underlineStyle.left,
+              width: underlineStyle.width,
               height: "3px",
               backgroundColor: activeColor,
               borderRadius: "2px",
