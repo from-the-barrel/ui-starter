@@ -1,63 +1,186 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "/FTB_WHITE.svg";
 
 const links = [
-  { path: "/", label: "to understand mariátegui" },
-  { path: "/article4", label: "let us orient ourselves" },
-  { path: "/article2", label: "let us disorient ourselves" },
-  { path: "/article1", label: "the compromised image" },
-  { path: "/article5", label: "compress and expand" },
-  { path: "/article6", label: "transpacific revolution" },
-  { path: "/article7", label: "dogsbody" },
-  { path: "/article8", label: "reconstitute the image!" },
+  { path: "/", label: "home" },
+  { path: "/about", label: "about" },
+  { path: "/releases", label: "releases" },
+  { path: "/contact", label: "contact" },
 ];
+
+const activeColor = "#ff4c4c";
+const hoverColor = "#ff6666";
+const navbarBg = "#000";
 
 const Navbar = () => {
   const location = useLocation();
+  const [underlineStyle, setUnderlineStyle] = useState({});
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    if (!navRef.current) return;
+    const activeLink = navRef.current.querySelector(
+      `a[href="${location.pathname}"]`
+    );
+    if (activeLink) {
+      const { offsetLeft, offsetWidth } = activeLink;
+      setUnderlineStyle({
+        left: offsetLeft,
+        width: offsetWidth,
+      });
+    } else {
+      setUnderlineStyle({ width: 0 });
+    }
+  }, [location.pathname]);
 
   return (
-    <nav
+    <div
       style={{
-        backgroundColor: "white",
-        padding: "20px",
-        paddingTop: "37px",
-        height: "100vh",
-        position: "fixed",
-        left: 0,
-        top: 0,
-        width: "250px",
+        width: "100%",
+        backgroundColor: navbarBg,
+        color: "white",
         display: "flex",
-        flexDirection: "column",
-        borderRight: "2px dotted grey",
+        alignItems: "center",
+        padding: "0 40px",
+        fontFamily: "'Courier New', Courier, monospace",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 1000,
+        height: "90px",
+        boxShadow: "0 2px 8px rgba(255, 255, 255, 0.06)",
+        userSelect: "none",
       }}
     >
-      <ul
+      <div
         style={{
           display: "flex",
-          flexDirection: "column",
-          listStyleType: "none",
-          margin: 0,
-          padding: 0,
-          alignItems: "flex-end",
-          fontStyle: "italic",
+          alignItems: "center",
+          gap: "50px",
+          height: "100%",
+          flexGrow: 1,
         }}
       >
-        {links.map(({ path, label }) => (
-          <li key={path} style={{ margin: "5px 0" }}>
-            <Link
-              to={path}
-              style={{
-                color: location.pathname === path ? "black" : "grey",
-                textDecoration: "none",
-                fontWeight: location.pathname === path ? "bold" : "normal",
-              }}
-            >
-              {label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+        {/*logo as home link*/}
+        {/* <Link
+          to="/"
+          style={{ height: "70%", display: "flex", alignItems: "center" }}
+        >
+          <img
+            src={logo}
+            alt="Logo"
+            style={{
+              height: "100%",
+              width: "auto",
+              objectFit: "contain",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          />
+        </Link> */}
+
+        <nav
+          ref={navRef}
+          style={{
+            position: "relative",
+            flexGrow: 1,
+          }}
+        >
+          <ul
+            style={{
+              display: "flex",
+              listStyleType: "none",
+              margin: 0,
+              padding: 0,
+              fontSize: "17px",
+              fontWeight: "500",
+              alignItems: "center",
+            }}
+          >
+            {links.map(({ path, label }, index) => {
+              const isActive = location.pathname === path;
+
+              return (
+                <React.Fragment key={path}>
+                  <li
+                    style={{
+                      position: "relative",
+                    }}
+                  >
+                    <Link
+                      to={path}
+                      style={{
+                        color: isActive ? activeColor : "#eee",
+                        textDecoration: "none",
+                        fontWeight: isActive ? "bold" : "normal",
+                        fontStyle: isActive ? "italic" : "normal",
+                        transition: "color 0.3s ease, transform 0.3s ease",
+                        paddingBottom: "4px",
+                        display: "inline-block",
+                        cursor: "pointer",
+                        userSelect: "none",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = hoverColor;
+                        e.currentTarget.style.transform = "scale(1.1)";
+                        e.currentTarget.style.fontStyle = "italic";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = isActive
+                          ? activeColor
+                          : "#eee";
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.fontStyle = isActive
+                          ? "italic"
+                          : "normal";
+                      }}
+                    >
+                      {label}
+                    </Link>
+                  </li>
+
+                  {/* Add slash unless it's the last item */}
+                  {index < links.length - 1 && (
+                    <li
+                      aria-hidden
+                      style={{
+                        margin: "0 16px", // equal left and right spacing
+                        color: activeColor,
+                        fontSize: "18px",
+                        userSelect: "none",
+                      }}
+                    >
+                      /
+                    </li>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </ul>
+
+          {/* Sliding underline */}
+          <span
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: underlineStyle.left || 0,
+              width: underlineStyle.width || 0,
+              height: "3px",
+              backgroundColor: activeColor,
+              borderRadius: "2px",
+              transition: "left 0.3s ease, width 0.3s ease",
+              boxShadow: `0 0 8px 2px ${activeColor}`,
+            }}
+          />
+        </nav>
+      </div>
+    </div>
   );
 };
 

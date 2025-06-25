@@ -1,0 +1,11 @@
+/* global.css */
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+html, body, #root {
+  height: 100%;
+}
