@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import "./global.css";
 import logo from "/FTB_WHITE.svg";
+import textless from "/textless_logo.png";
 import habash from "/habash.png";
 import { Document, Page } from "react-pdf";
 
@@ -23,14 +24,7 @@ const releases: Release[] = [
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="background-video"
-        controls
-      >
+      <video autoPlay muted loop playsInline className="background-video">
         <source src="liberacion.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
@@ -38,7 +32,7 @@ const Home: React.FC = () => {
       <div className="overlay">
         <div className="hero-box">
           <h1>FROM THE BARREL</h1>
-          <img src={logo} alt="Logo" className="hero-logo" />
+          <img src={textless} alt="Logo" className="hero-logo" />
         </div>
 
         <div className="releases-section">

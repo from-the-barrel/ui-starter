@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "/FTB_WHITE.svg";
-import "./Navbar.css"; // 🔥 Add this
+import "./Navbar.css";
 
 const links = [
   { path: "/", label: "home" },

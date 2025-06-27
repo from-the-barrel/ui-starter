@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
+import About from "./About";
 import "./global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,6 +23,7 @@ const App = () => {
       >
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/" element={<About />} />
         </Routes>
       </div>
     </Router>
