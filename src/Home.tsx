@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
+import "./global.css";
 import logo from "/FTB_WHITE.svg";
+import habash from "/habash.png";
 import { Document, Page } from "react-pdf";
 
 interface Release {
@@ -12,9 +14,9 @@ interface Release {
 
 const releases: Release[] = [
   {
-    title: "Placeholder by Place Holder",
+    title: "Selected Works of Dr. George Habash",
     date: "Fall 2025",
-    img: logo,
+    img: habash,
   },
 ];
 

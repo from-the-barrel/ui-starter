@@ -1,0 +1,87 @@
+/* Sticky navbar that stays at the top without overlapping content */
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 90px;
+  background-color: #000;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.06);
+  user-select: none;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Main inner flex layout */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* Nav block that contains the links */
+.navbar-nav {
+  position: relative;
+  flex-grow: 1;
+}
+
+/* List of links */
+.navbar-links {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 500;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ Allows wrapping on mobile */
+  gap: 8px;
+}
+
+/* Each individual link */
+.navbar-link {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  padding-bottom: 4px;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar-link:hover {
+  color: #ff6666;
+  transform: scale(1.1);
+  font-style: italic;
+}
+
+.navbar-link.active {
+  color: #ff4c4c;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Slash separator between links */
+.navbar-separator {
+  color: #ff4c4c;
+  font-size: 18px;
+  margin: 0 8px;
+  user-select: none;
+}
+
+/* Animated underline */
+.navbar-underline {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: #ff4c4c;
+  border-radius: 2px;
+  transition: left 0.3s ease, width 0.3s ease;
+  box-shadow: 0 0 8px 2px #ff4c4c;
+}
