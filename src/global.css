@@ -1,45 +1,10 @@
-@media (max-width: 768px) {
-  .overlay {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-y: auto;
-  }
+@font-face {
+  font-family: 'Pitch Sans';
+  src: url('/PitchSans-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  .hero-box, .releases-section {
-    max-width: 100%;
-    width: 100%;
-    padding: 20px 0;
-  }
-
-  .hero-box h1 {
-    font-size: 48px;
-  }
-
-  .hero-logo {
-    max-height: 120px;
-  }
-
-  .releases-section {
-    height: auto;
-    max-height: none;
-    padding: 20px;
-  }
-
-  .releases-section h2 {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
-
-  .release-item {
-    flex-direction: column;
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .release-img {
-    margin: 0 0 12px 0;
-    width: 80px;
-    height: 80px;
-  }
+body {
+  font-family: 'Pitch Sans', sans-serif !important;; 
 }

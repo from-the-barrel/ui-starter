@@ -18,12 +18,11 @@ const App = () => {
           color: "white",
           backgroundColor: "#000",
           minHeight: "100vh",
-          fontFamily: "'Courier New', Courier, monospace",
         }}
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>

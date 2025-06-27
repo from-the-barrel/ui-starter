@@ -24,7 +24,14 @@ const releases: Release[] = [
 const Home: React.FC = () => {
   return (
     <div className="home-container">
-      <video autoPlay muted loop playsInline className="background-video">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        className="background-video"
+      >
         <source src="liberacion.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
