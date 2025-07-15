@@ -25,8 +25,7 @@ const releases: Release[] = [
 
 const instagramPosts = [
   "https://www.instagram.com/p/DL2z7MwO21j/?img_index=1",
-
-  // add more URLs as you like
+  "https://www.instagram.com/p/DL2z7MwO21j/?img_index=3",
 ];
 
 const Home: React.FC = () => {
