@@ -4,6 +4,8 @@ import "./global.css";
 import logo from "/FTB_WHITE.svg";
 import textless from "/textless_logo.png";
 import habash from "/habash.png";
+import ftb1 from "/ftbzine1.png";
+import ftb2 from "/ftbzine2.png";
 import { Document, Page } from "react-pdf";
 import InstagramEmbed from "./components/InstagramEmbed";
 
@@ -18,7 +20,7 @@ const latestReleases: Release[] = [
   {
     title:
       "FTB #1 - Revolutionary Change in Africa: An Interview with Samir Amin",
-    img: "/ftbzine1.png",
+    img: ftb1,
   },
 ];
 
@@ -31,7 +33,7 @@ const releases: Release[] = [
   {
     title: `Reflections on Victor Serge's: "What Everyone Should Know About State Represssion`,
     date: "Summer 2025",
-    img: "/ftbzine2.png",
+    img: ftb2,
   },
 ];
 
