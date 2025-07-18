@@ -2,7 +2,7 @@ import logo from "/FTB_WHITE.svg";
 
 const About = () => {
   return (
-    <div style={{ paddingLeft: "30%", paddingRight: "30%" }}>
+    <div style={{ paddingLeft: "10%", paddingRight: "10%" }}>
       <div>
         From The Barrel is a socialist publishing house dedicated to
         (re)circulating militant texts that can decisively guide the movement to
@@ -19,7 +19,7 @@ const About = () => {
         <img
           src={logo}
           style={{
-            maxWidth: "30%",
+            maxWidth: "15%",
             height: "auto",
             paddingTop: "30px",
           }}
