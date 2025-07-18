@@ -52,11 +52,12 @@ const Home: React.FC = () => {
           <div className="releases-wrapper">
             <div className="releases-section">
               <h2>Latest Releases</h2>
-              {latestReleases.map(({ title, img }, idx) => (
+              {latestReleases.map(({ title, date, img }, idx) => (
                 <div className="release-item" key={`latest-${idx}`}>
                   <img src={img} alt="Release Cover" className="release-img" />
                   <div>
                     <div>{title}</div>
+                    <div>{date}</div>
                   </div>
                 </div>
               ))}
