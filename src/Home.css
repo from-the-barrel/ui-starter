@@ -28,7 +28,7 @@
 .hero-box h1 {
   white-space: nowrap;            
   font-size: clamp(18px, 5vw, 48px);  
-  font-weight: 700;
+  /* font-weight: 700; */
   letter-spacing: 3px;
   margin: 0;
   color: #e63946;
@@ -36,9 +36,8 @@
 }
 
 .hero-logo {
-  max-height: 120px;
-  object-fit: contain;
-  margin-top: 16px;
+  max-height: 130px;
+  /* object-fit: contain; */
 }
 
 /* Two-column content area */

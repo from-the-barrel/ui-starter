@@ -44,7 +44,9 @@ const Home: React.FC = () => {
     <div className="home-container">
       <div className="overlay">
         <div className="hero-box">
-          <h1>FROM THE BARREL</h1>
+          <h1 style={{ fontFamily: "'Astroph Rough'", fontSize: "60px" }}>
+            From the Barrel
+          </h1>
           <img src={textless} alt="Logo" className="hero-logo" />
         </div>
 
