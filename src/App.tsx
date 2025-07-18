@@ -8,23 +8,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <div
-        style={{
-          paddingTop: "70px",
-          padding: "30px",
-          color: "white",
-          backgroundColor: "#000",
-          minHeight: "100vh",
-        }}
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </div>
-    </Router>
+    <Home></Home>
+    // <Router>
+    //   <Navbar />
+    //   <div
+    //     style={{
+    //       paddingTop: "70px",
+    //       padding: "30px",
+    //       color: "white",
+    //       backgroundColor: "#000",
+    //       minHeight: "100vh",
+    //     }}
+    //   >
+    //     <Routes>
+    //       <Route path="/" element={<Home />} />
+    //       <Route path="/about" element={<About />} />
+    //     </Routes>
+    //   </div>
+    // </Router>
   );
 };
 

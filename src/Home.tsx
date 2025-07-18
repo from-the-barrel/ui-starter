@@ -44,11 +44,13 @@ const Home: React.FC = () => {
     <div className="home-container">
       <div className="overlay">
         <div className="hero-box">
-          <h1 style={{ fontFamily: "'Astroph Rough'" }}>From the Barrel</h1>
-          <img src={textless} alt="Logo" className="hero-logo" />
+          {/* <h1 style={{ fontFamily: "'Astroph Rough'" }}>From the Barrel</h1> */}
+          <img src={logo} alt="Logo" className="hero-logo" />
+          <div style={{ fontSize: "20px", paddingTop: "20px" }}>
+            Website coming soon!
+          </div>
         </div>
-
-        <div className="content">
+        {/* <div className="content">
           <div className="releases-wrapper">
             <div className="releases-section">
               <h2>Latest Releases</h2>
@@ -79,8 +81,8 @@ const Home: React.FC = () => {
 
           <div className="instagram-section">
             <InstagramEmbed postUrls={instagramPosts} />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </div>
   );
