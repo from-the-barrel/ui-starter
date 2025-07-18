@@ -11,7 +11,7 @@ interface Release {
   title: string;
   date?: string;
   img?: string;
-  pdf?: string; // pdf url or import
+  pdf?: string;
 }
 
 const latestReleases: Release[] = [
@@ -27,6 +27,11 @@ const releases: Release[] = [
     title: "Selected Works of Dr. George Habash",
     date: "Fall 2025",
     img: habash,
+  },
+  {
+    title: `Reflections on Victor Serge's: "What Everyone Should Know About State Represssion`,
+    date: "Summer 2025",
+    img: "/ftbzine2.png",
   },
 ];
 
