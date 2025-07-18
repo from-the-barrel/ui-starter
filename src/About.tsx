@@ -1,12 +1,14 @@
-import React from "react";
 import "./global.css";
-import logo from "/FTB_WHITE.svg";
-import textless from "/textless_logo.png";
-import habash from "/habash.png";
-import { Document, Page } from "react-pdf";
 
 const About = () => {
-  return <div className="fdaf"></div>;
+  return (
+    <div>
+      From The Barrel is a socialist publishing house dedicated to
+      (re)circulating militant texts that can decisively guide the movement to
+      establish popular power. Our work is oriented by the necessity to
+      creatively apply revolutionary theory to our concrete conditions.
+    </div>
+  );
 };
 
 export default About;

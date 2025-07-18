@@ -48,7 +48,11 @@
   height: 100%;
 }
 
-/* Left column - Upcoming Releases */
+.releases-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .releases-section {
   flex: 1;
   background: rgba(0, 0, 0, 0.7);
@@ -87,17 +91,16 @@
 .release-item {
   display: flex;
   align-items: center;
+  gap: 20px; /* space between image and text */
   margin-bottom: 24px;
-  font-size: 20px;
 }
 
 .release-img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-right: 20px;
-  border-radius: 6px;
-  border: 2px solid #e63946;
+  width: 50%;
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* Right column - Instagram Feed */

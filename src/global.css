@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Astroph Rough';
+  src: url('/Astroph-Rough-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: 'Pitch Sans', sans-serif !important;; 
+  font-family: 'Pitch Sans', sans-serif !important;
 }

@@ -9,12 +9,19 @@ import InstagramEmbed from "./components/InstagramEmbed";
 
 interface Release {
   title: string;
-  date: string;
+  date?: string;
   img?: string;
   pdf?: string; // pdf url or import
 }
 
-//add to this to add to releases
+const latestReleases: Release[] = [
+  {
+    title:
+      "FTB #1 - Revolutionary Change in Africa: An Interview with Samir Amin",
+    img: "/ftbzine1.png",
+  },
+];
+
 const releases: Release[] = [
   {
     title: "Selected Works of Dr. George Habash",
@@ -35,17 +42,31 @@ const Home: React.FC = () => {
         </div>
 
         <div className="content">
-          <div className="releases-section">
-            <h2>Upcoming Releases</h2>
-            {releases.map(({ title, date, img }, idx) => (
-              <div className="release-item" key={idx}>
-                <img src={img} alt="Release Cover" className="release-img" />
-                <div>
-                  <div>{title}</div>
-                  <div>{date}</div>
+          <div className="releases-wrapper">
+            <div className="releases-section">
+              <h2>Latest Releases</h2>
+              {latestReleases.map(({ title, img }, idx) => (
+                <div className="release-item" key={`latest-${idx}`}>
+                  <img src={img} alt="Release Cover" className="release-img" />
+                  <div>
+                    <div>{title}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <div className="releases-section">
+              <h2>Upcoming Releases</h2>
+              {releases.map(({ title, date, img }, idx) => (
+                <div className="release-item" key={idx}>
+                  <img src={img} alt="Release Cover" className="release-img" />
+                  <div>
+                    <div>{title}</div>
+                    <div>{date}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="instagram-section">
