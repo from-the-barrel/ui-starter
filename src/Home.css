@@ -133,3 +133,18 @@
     border-bottom: 2px solid #e63946;
   }
 }
+
+.release-link {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Match the gap from .release-item */
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+  width: 100%;
+}
+
+.release-link:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

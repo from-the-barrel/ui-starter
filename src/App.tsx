@@ -3,10 +3,13 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Home";
 import About from "./About";
+import Releases from "./Releases";
 // import "./global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "/FTB_BLACK.svg";
+import ZineOne from "./releases/zine1";
+import ZineTwo from "./releases/zine2";
 
 const App = () => {
   const [password, setPassword] = useState("");
@@ -61,6 +64,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/releases" element={<Releases />} />
+          <Route path="/releases/zine-1" element={<ZineOne />} />
+          <Route path="/releases/zine-2" element={<ZineTwo />} />
         </Routes>
       </div>
     </Router>

@@ -14,26 +14,24 @@ interface Release {
   date?: string;
   img?: string;
   pdf?: string;
+  link?: string;
 }
 
 const latestReleases: Release[] = [
   {
     title:
-      "FTB #1 - Revolutionary Change in Africa: An Interview with Samir Amin",
+      "ZINE #1 - Revolutionary Change in Africa: An Interview With Samir Amin",
     img: ftb1,
+    link: "#/releases/zine-1",
   },
 ];
 
 const releases: Release[] = [
   {
-    title: "Selected Works of Dr. George Habash",
-    date: "Fall 2025",
-    img: habash,
-  },
-  {
-    title: `Reflections on Victor Serge's: "What Everyone Should Know About State Represssion`,
+    title: `ZINE #2 - Reflections on Victor Serge's: "What Everyone Should Know About State Represssion`,
     date: "Summer 2025",
     img: ftb2,
+    link: "#/releases/zine-2",
   },
 ];
 
@@ -44,7 +42,7 @@ const Home: React.FC = () => {
     <div className="home-container">
       <div className="overlay">
         <div className="hero-box">
-          <h1 style={{ fontFamily: "'Astroph Rough'" }}>From the Barrel</h1>
+          <h1 style={{ fontFamily: "'Astroph Rough'" }}>FROM THE BARREL</h1>
           <img src={textless} alt="Logo" className="hero-logo" />
           <div style={{ fontSize: "20px", paddingTop: "20px" }}></div>
         </div>
@@ -52,31 +50,69 @@ const Home: React.FC = () => {
           <div className="releases-wrapper">
             <div className="releases-section">
               <h2>Latest Releases</h2>
-              {latestReleases.map(({ title, date, img }, idx) => (
+              {latestReleases.map(({ title, date, img, link }, idx) => (
                 <div className="release-item" key={`latest-${idx}`}>
-                  <img src={img} alt="Release Cover" className="release-img" />
-                  <div>
-                    <div>{title}</div>
-                    <div>{date}</div>
-                  </div>
+                  {link ? (
+                    <a href={link} className="release-link">
+                      <img
+                        src={img}
+                        alt="Release Cover"
+                        className="release-img"
+                      />
+                      <div>
+                        <div>{title}</div>
+                        <div>{date}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <>
+                      <img
+                        src={img}
+                        alt="Release Cover"
+                        className="release-img"
+                      />
+                      <div>
+                        <div>{title}</div>
+                        <div>{date}</div>
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
-
             <div className="releases-section">
               <h2>Upcoming Releases</h2>
-              {releases.map(({ title, date, img }, idx) => (
+              {releases.map(({ title, date, img, link }, idx) => (
                 <div className="release-item" key={idx}>
-                  <img src={img} alt="Release Cover" className="release-img" />
-                  <div>
-                    <div>{title}</div>
-                    <div>{date}</div>
-                  </div>
+                  {link ? (
+                    <a href={link} className="release-link">
+                      <img
+                        src={img}
+                        alt="Release Cover"
+                        className="release-img"
+                      />
+                      <div>
+                        <div>{title}</div>
+                        <div>{date}</div>
+                      </div>
+                    </a>
+                  ) : (
+                    <>
+                      <img
+                        src={img}
+                        alt="Release Cover"
+                        className="release-img"
+                      />
+                      <div>
+                        <div>{title}</div>
+                        <div>{date}</div>
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
           </div>
-
           <div className="instagram-section">
             <InstagramEmbed postUrls={instagramPosts} />
           </div>
