@@ -2,6 +2,7 @@ import React from "react";
 import zine1pdf from "/1-revolutionary-change-in-africa-VIEW.pdf";
 
 const ZineOne: React.FC = () => {
+  // You'll replace this with your actual PDF URL
   const pdfUrl = zine1pdf;
 
   const openPDF = () => {
@@ -56,7 +57,7 @@ const ZineOne: React.FC = () => {
       >
         {/* Back Button */}
         <a
-          href="#/releases"
+          href="/releases"
           style={{
             color: "#e63946",
             textDecoration: "none",
@@ -121,7 +122,7 @@ const ZineOne: React.FC = () => {
               maxWidth: "500px",
             }}
           >
-            Description goes here.
+            Description goes here
           </p>
         </div>
 
@@ -139,14 +140,15 @@ const ZineOne: React.FC = () => {
             style={{
               backgroundColor: "#e63946",
               color: "white",
-              padding: "16px 32px",
+              padding: window.innerWidth <= 768 ? "14px 28px" : "16px 32px",
               border: "none",
               borderRadius: "6px",
-              fontSize: "18px",
+              fontSize: window.innerWidth <= 768 ? "16px" : "18px",
               fontWeight: "600",
               cursor: "pointer",
               transition: "all 0.3s ease",
               letterSpacing: "1px",
+              width: window.innerWidth <= 768 ? "200px" : "auto",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#d63031";
@@ -167,14 +169,17 @@ const ZineOne: React.FC = () => {
             style={{
               color: "#e63946",
               textDecoration: "none",
-              padding: "16px 32px",
+              padding: window.innerWidth <= 768 ? "14px 28px" : "16px 32px",
               border: "2px solid #e63946",
               borderRadius: "6px",
-              fontSize: "16px",
+              fontSize: window.innerWidth <= 768 ? "14px" : "16px",
               fontWeight: "600",
               transition: "all 0.3s ease",
               letterSpacing: "1px",
               display: "inline-block",
+              width: window.innerWidth <= 768 ? "200px" : "auto",
+              textAlign: "center",
+              boxSizing: "border-box",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = "#e63946";
@@ -190,17 +195,6 @@ const ZineOne: React.FC = () => {
             DOWNLOAD
           </a>
         </div>
-
-        {/* Additional Info */}
-        <div
-          style={{
-            marginTop: "40px",
-            padding: "20px 0",
-            borderTop: "1px solid #333",
-            width: "100%",
-            maxWidth: "500px",
-          }}
-        ></div>
       </div>
     </div>
   );

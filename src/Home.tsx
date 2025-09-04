@@ -8,6 +8,7 @@ import ftb1 from "/ftbzine1.png";
 import ftb2 from "/ftbzine2.png";
 import { Document, Page } from "react-pdf";
 import InstagramEmbed from "./components/InstagramEmbed";
+import bla from "/blacover.jpeg";
 
 interface Release {
   title: string;
@@ -24,13 +25,17 @@ const latestReleases: Release[] = [
     img: ftb1,
     link: "#/releases/zine-1",
   },
+  {
+    title: `ZINE #2 - Reflections on Victor Serge's: "What Everyone Should Know About State Represssion"`,
+    img: ftb2,
+    link: "#/releases/zine-2",
+  },
 ];
 
 const releases: Release[] = [
   {
-    title: `ZINE #2 - Reflections on Victor Serge's: "What Everyone Should Know About State Represssion`,
-    date: "Summer 2025",
-    img: ftb2,
+    title: `The Selected Works of the Black Liberation Army`,
+    img: bla,
     link: "#/releases/zine-2",
   },
 ];

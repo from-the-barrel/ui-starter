@@ -76,13 +76,13 @@ const Navbar = () => {
             })}
           </ul>
 
-          <span
+          {/* <span
             className="navbar-underline"
             style={{
               left: underlineStyle.left,
               width: underlineStyle.width,
             }}
-          />
+          /> */}
         </nav>
       </div>
     </div>
